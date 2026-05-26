@@ -51,7 +51,7 @@ const clave = "1234";
 
 ---
 
-# 👨‍✈️ CONDUCTORES
+# 👨CONDUCTORES
 
 Módulo CRUD para administrar conductores y rutas escolares.
 
@@ -80,8 +80,8 @@ Cada conductor contiene:
 {
     id: 123456,
     nombre: "Carlos",
-    precio: "07:00",
-    descr: "Ruta Norte",
+    horario: "07:00",
+    ruta: "Ruta Norte",
     imagen: "url_imagen"
 }
 ```
@@ -146,16 +146,6 @@ El número telefónico debe contener exactamente 10 dígitos.
 if(telefono.value.length !== 10)
 ```
 
-## Nombre
-
-Validación para permitir únicamente letras.
-
-```js
-const regexNombre = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
-```
-
----
-
 # 💾 Almacenamiento Local
 
 El sistema utiliza:
@@ -181,35 +171,6 @@ Esto permite mantener la información aunque se recargue la página.
 - Hover animations
 - Modales animados
 - Diseño moderno con CSS
-
----
-
-# 🛠 Tecnologías utilizadas
-
-- HTML5
-- CSS3
-- JavaScript Vanilla
-- LocalStorage API
-- Fetch API
-- OpenWeatherMap API
-
----
-
-# 🚀 Cómo ejecutar el proyecto
-
-1. Descargar o clonar el repositorio.
-
-```bash
-git clone URL_DEL_REPOSITORIO
-```
-
-2. Abrir la carpeta del proyecto.
-
-3. Ejecutar el archivo:
-
-```bash
-index.html
-```
 
 ---
 
