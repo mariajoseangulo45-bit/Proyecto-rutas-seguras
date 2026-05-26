@@ -232,10 +232,6 @@ index.html
 
 Proyecto desarrollado por:
 
-**Juan Cardenas**
+**Maria Jose Angulo Sanchez**
 
 ---
-
-# 📄 Licencia
-
-Proyecto académico y educativo.
