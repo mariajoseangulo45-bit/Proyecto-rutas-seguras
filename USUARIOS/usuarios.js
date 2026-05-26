@@ -63,38 +63,84 @@ cargarConductores();
 //formulario estudiantes 
 
 function render(data_estudiantes){
-    contenidoTarjeta.innerHTML = ""; 
-    data_estudiantes.forEach((element)=>{
-        contenidoTarjeta.innerHTML += `
-        <article class="card">
-            <div class="contenido">
-                <h2>
-                    NOMBRE: ${element.nombre}
-                </h2>
-                <p>
-                    HORARIO: ${element.telefono}
-                </p>
-                <p>
-                    RUTA: ${element.seleccionarConductor}
-                </p>
-                <button 
-                    class="editar" id="editarEstudiante"
-                    data-id="${element.id}"
-                >
-                    Editar
-                </button>
-                <button 
-                    class="eliminar" 
-                    data-id="${element.id}"
-                >
-                    Eliminar
-                </button>
-            </div>
-        </article>
-        `;
-    });
-}
 
+    contenidoTarjeta.innerHTML = "";
+
+    // =========================
+    // AGRUPAR POR CONDUCTOR
+    // =========================
+
+    const grupos = {};
+
+    data_estudiantes.forEach((element) => {
+
+        const conductor = element.seleccionarConductor;
+
+        if(!grupos[conductor]){
+            grupos[conductor] = [];
+        }
+
+        grupos[conductor].push(element);
+
+    });
+
+    // =========================
+    // CREAR LAS CARDS
+    // =========================
+
+    for(let conductor in grupos){
+
+        contenidoTarjeta.innerHTML += `
+
+            <div class="grupo-conductor">
+
+                <h1 class="titulo-conductor">
+                    🚐 ${conductor}
+                </h1>
+
+                <div class="contenedor-estudiantes">
+
+                    ${grupos[conductor].map((element) => `
+
+                        <article class="card">
+
+                            <div class="contenido">
+
+                                <h2>
+                                    Nombre: ${element.nombre}
+                                </h2>
+
+                                <p>
+                                    Telefono: ${element.telefono}
+                                </p>
+
+                                <button 
+                                    class="editar"
+                                    data-id="${element.id}"
+                                >
+                                    Editar
+                                </button>
+
+                                <button 
+                                    class="eliminar"
+                                    data-id="${element.id}"
+                                >
+                                    Eliminar
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    `).join("")}
+
+                </div>
+
+            </div>
+
+        `;
+    }
+}
 
 formulario.addEventListener("submit", (e)=>{
     e.preventDefault();
@@ -196,8 +242,6 @@ cerrarEditar.addEventListener("click", () => {
     modalEditar.classList.remove("show");
 
 });
-
-
 
 // API DEL CLIMA DOM
 const climaBox =document.getElementsByClassName("clima-box")
