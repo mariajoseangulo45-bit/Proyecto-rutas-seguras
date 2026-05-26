@@ -49,12 +49,31 @@ renderUsuarios();
 //plegable opciones 
 
 const seleccionarConductor = document.getElementById("seleccionarConductor");
+
 function cargarConductores(){
-    usuarios.forEach((user)=>{
-        seleccionarConductor.innerHTML += `
-        <option value="${user.nombre}">
-            ${user.nombre}
+    seleccionarConductor.innerHTML = `
+        <option value="">
+            Seleccione un conductor
         </option>
+    `;
+
+    editarConductor.innerHTML = `
+        <option value="">
+            Seleccione un conductor
+        </option>
+    `;
+    usuarios.forEach((user)=>{
+
+        seleccionarConductor.innerHTML += `
+            <option value="${user.nombre}">
+                ${user.nombre}
+            </option>
+        `;
+
+        editarConductor.innerHTML += `
+            <option value="${user.nombre}">
+                ${user.nombre}
+            </option>
         `;
     });
 }
@@ -65,11 +84,6 @@ cargarConductores();
 function render(data_estudiantes){
 
     contenidoTarjeta.innerHTML = "";
-
-    // =========================
-    // AGRUPAR POR CONDUCTOR
-    // =========================
-
     const grupos = {};
 
     data_estudiantes.forEach((element) => {
@@ -83,11 +97,6 @@ function render(data_estudiantes){
         grupos[conductor].push(element);
 
     });
-
-    // =========================
-    // CREAR LAS CARDS
-    // =========================
-
     for(let conductor in grupos){
 
         contenidoTarjeta.innerHTML += `
@@ -106,9 +115,9 @@ function render(data_estudiantes){
 
                             <div class="contenido">
 
-                                <h2>
+                                <p>
                                     Nombre: ${element.nombre}
-                                </h2>
+                                </p>
 
                                 <p>
                                     Telefono: ${element.telefono}
@@ -144,6 +153,12 @@ function render(data_estudiantes){
 
 formulario.addEventListener("submit", (e)=>{
     e.preventDefault();
+    if(telefono.value.length !== 10){
+
+    alert("El número debe tener exactamente 10 dígitos");
+
+    return;
+}
     const data = {
         id: Date.now(),
         nombre: nombre.value,
@@ -209,21 +224,22 @@ contenidoTarjeta.addEventListener("click", (e) => {
 formEditar.addEventListener("submit", (e) => {
 
     e.preventDefault();
+    if(editarTelefono.value.length !== 10){
+
+    alert("El número debe tener exactamente 10 dígitos");
+
+    return;
+}
 
     const index = estudiantes.findIndex(
         u => u.id === editId
     );
 
     estudiantes[index] = {
-
         ...estudiantes[index],
-
         nombre: editarNombre.value,
-
         telefono: editarTelefono.value,
-
         seleccionarConductor: editarConductor.value
-
     };
 
     localStorage.setItem(
@@ -232,13 +248,10 @@ formEditar.addEventListener("submit", (e) => {
     );
 
     render(estudiantes);
-
     modalEditar.classList.remove("show");
-
 });
 
 cerrarEditar.addEventListener("click", () => {
-
     modalEditar.classList.remove("show");
 
 });

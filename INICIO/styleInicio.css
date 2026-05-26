@@ -54,7 +54,7 @@ body::before{
 }
 
 .principal h1{
-    font-size: 3rem;
+    font-size: 200%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
     color: #032b67;

@@ -136,11 +136,12 @@ nav{
     }
 }
 
-
 #listaUsuarios{
     width:80%;
     margin:auto;
     margin-top:30px;
+    background-image: url(/image.png);
+    padding: 20px 150px;
 }
 
 .fila{
@@ -268,7 +269,7 @@ button{
   background-image: url(descarga.jpg);
 }
 .modal-content h2{
-     font-size: 2rem;
+     font-size: 2.5rem;
     letter-spacing: 5px;
    font-family: "Bagel Fat One", system-ui;
    font-style: normal;
@@ -298,11 +299,12 @@ button{
     font-size: 15px;
     padding: 50px;
     gap: 50px;
-    background-image: url(descarga.jpg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 .card{
     background:  rgb(236, 202, 176);
-    color: rgb(74, 73, 73);
+    color: rgb(0, 0, 0);
     border-radius: 15px;
     padding: 20px;
     margin-top: 10px;
