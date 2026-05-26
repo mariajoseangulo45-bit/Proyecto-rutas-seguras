@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Eventos Master</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap" rel="stylesheet">
+</head>
+ 
+<body>
+ 
+    <h1 id="conductores">CONDUCTORES</h1>
+    <h2 id="rutasSeguras">RUTAS SEGURAS</h2>
+    <input type="text" id="buscar" placeholder="Buscar usuario...">
+ 
+    <button id="btnNuevo" onclick="console.log('Evento HTML inline (demo)')">
+        + Nuevo Conductor
+    </button>
+ 
+    <p id="eventLog">Eventos: esperando interacción...</p>
+ 
+    <div id="contenidoTarjeta">
+
+    </div>
+ 
+    <div id="modal" class="modal">
+        <div class="modal-content">
+ 
+            <h2>NUEVO CONDUCTOR</h2>
+ 
+            <form id="form">
+                <input type="text" id="nombre" placeholder="Nombre Conductor" required>
+                <input type="time" id="precio" placeholder="Horario" required>
+                <input type="text" id="descr" placeholder="recorrido" required>
+                <input type="url" id="imagen" placeholder="URL de imagen" required> 
+                <button type="submit">Guardar</button>
+                <button type="button" id="cerrar">Cancelar</button>
+            </form>
+ 
+        </div>
+    </div>
+ 
+    <script src="app2.js"></script>
+</body>
+ 
+</html>

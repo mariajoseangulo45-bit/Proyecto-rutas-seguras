@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleUsu.css">
+</head>
+
+<body>
+        <div class="clima-box">
+
+            <h3>Clima</h3>
+            <img id="iconoClima" alt="Icono del clima">
+            <p id="temperatura">Cargando...</p>
+            <p id="descripcionClima"></p>
+
+        </div>
+
+    </div>
+
+    <section>
+        <h1>BIENVENIDO</h1>
+        <h2>Antes de ingresar los datos del estudiante se solicita revisar bien el nombre del conductor y el horario que mejor se le acomnode al estudiante.</h2>
+    </section>
+    <section>
+     <h2>RUTAS DISPONIBLES</h2>
+    <div id="listaUsuarios"></div>
+    </section>
+
+    <section>
+        <div id="estudiante" class="estudiante">
+            <div class="modal-content">
+                <h2>AGREGAR ESTUDIANTE</h2>
+                <form id="form">
+                    <input type="text" id="nombre" placeholder="Nombre estudiante" required>
+                    <input type="number" id="telefono" placeholder="Número de telefono" required>
+                    <select id="seleccionarConductor">
+                        <option value="">
+                            Seleccione un conductor
+                        </option>
+                    </select>    
+                        <button type="submit">Guardar</button>
+                        <button type="button" id="cerrar">Cancelar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section id="contenidoTarjeta">
+</section>
+
+<div id="modalEditar" class="modal">
+    <div class="modal-content">
+
+        <h2>EDITAR ESTUDIANTE</h2>
+
+        <form id="formEditar">
+
+            <input 
+                type="text" 
+                id="editarNombre" 
+                placeholder="Nombre estudiante"
+                required
+            >
+
+            <input 
+                type="number" 
+                id="editarTelefono" 
+                placeholder="Número de teléfono"
+                required
+            >
+
+            <select id="editarConductor" required>
+                <option value="">
+                    Seleccione un conductor
+                </option>
+            </select>
+
+            <button type="submit">
+                Guardar cambios
+            </button>
+
+            <button type="button" id="cerrarEditar">
+                Cancelar
+            </button>
+
+        </form>
+
+    </div>
+</div>
+
+</body>
+<script src="usuarios.js"></script>
+</html>
