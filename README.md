@@ -188,6 +188,11 @@ Esto permite mantener la información aunque se recargue la página.
 | Buscador | ✅ |
 
 ---
+# Visualización
+![Página de inicio](./imagenes/inicio.png)
+![Página de ingreso](./imagenes/entrada.png)
+![Página de conductor](./imagenes/conduc.png)
+---
 
 # 👨‍💻 Autor
 
