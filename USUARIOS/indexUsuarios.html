@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleUsu.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    <header>
+        <nav>
+            <ul id="inicio">
+                <li><a href="#rutas">Rutas</a></li>
+                <li><a href="#estudiante">Agregar estudiante</a></li>
+                <div class="clima-box">
+                    <h3>Clima</h3>
+                    <img id="iconoClima" alt="Icono del clima">
+                    <p id="temperatura">Cargando...</p>
+                    <p id="descripcionClima"></p>
+
+                </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="bienvenido">
+            <h1>BIENVENIDO</h1>
+            <h2>Antes de ingresar los datos del estudiante se solicita revisar bien el nombre del conductor y el horario
+                que mejor se le acomode.</h2>
+        </section>
+
+        <section id="rutas">
+            <h2 id="titulorutas">RUTAS DISPONIBLES</h2>
+            <div id="listaUsuarios"></div>
+        </section>
+
+        <section id="estudiante">
+            <div id="estudiante" class="estudiante">
+                <div class="modal-content">
+                    <h2>AGREGAR ESTUDIANTE</h2>
+                    <form id="form">
+                        <input type="text" id="nombre" placeholder="Nombre estudiante" required>
+                        <input type="number" id="telefono" placeholder="Número de telefono" required>
+                        <select id="seleccionarConductor">
+                            <option value="">
+                                Seleccione un conductor
+                            </option>
+                        </select>
+                        <button type="submit">Guardar</button>
+                        <button type="button" id="cerrar">Cancelar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contenidoTarjeta">
+        </section>
+
+        <div id="modalEditar" class="modal">
+            <div class="modal-content">
+                <h2>EDITAR ESTUDIANTE</h2>
+                <form id="formEditar">
+                    <input type="text" id="editarNombre" placeholder="Nombre estudiante" required>
+                    <input type="number" id="editarTelefono" placeholder="Número de teléfono" required>
+                    <select id="editarConductor" required>
+                        <option value="">
+                            Seleccione un conductor
+                        </option>
+                    </select>
+                    <button type="submit">
+                        Guardar cambios
+                    </button>
+                    <button type="button" id="cerrarEditar">
+                        Cancelar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="usuarios.js"></script>
+
+</html>

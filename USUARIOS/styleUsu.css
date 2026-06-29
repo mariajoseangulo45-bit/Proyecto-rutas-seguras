@@ -1,0 +1,311 @@
+body{
+    padding: 20px;
+    margin: 0;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav{
+    height: 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 30px;
+
+    background: rgba(101, 154, 4, 0.532);
+
+    backdrop-filter: blur(8px);
+
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+}
+
+#inicio{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#inicio li a{
+    position: relative;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+#inicio li a:hover{
+    color: #38bdf8;
+}
+
+#inicio li a::after{
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0%;
+    height: 2px;
+
+    background: #38bdf8;
+
+    transition: 0.3s ease;
+}
+
+#inicio li a:hover::after{
+    width: 100%;
+}
+
+.clima-box{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 14px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    size: 80px;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.clima-box:hover{
+    transform: translateY(-2px);
+
+    background: rgba(56, 189, 248, 0.15);
+
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
+}
+
+#iconoClima{
+    width: 48px;
+    height: 48px;
+}
+
+.clima-box h3{
+    margin: 0;
+    font-size: 14px;
+    color: #38bdf8;
+}
+
+#temperatura{
+    margin: 0;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#descripcionClima{
+    margin: 0;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+@media(max-width: 768px){
+
+    nav{
+        flex-direction: column;
+        justify-content: center;
+
+        height: auto;
+
+        padding: 15px;
+        gap: 15px;
+    }
+
+    #inicio{
+        gap: 20px;
+    }
+
+    .clima-box{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+#listaUsuarios{
+    width:80%;
+    margin:auto;
+    margin-top:30px;
+    background-image: url(/image.png);
+    padding: 20px 150px;
+}
+
+.fila{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    background:#ececec;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:15px;
+}
+
+.foto{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+    border-radius:50%;
+}
+.info{
+    flex:1;
+    font-size: 15px;
+}
+.info h2{
+    margin-bottom:10px;
+    font-size: 20px;
+}
+.acciones{
+    display:flex;
+    gap:10px;
+}
+
+button{
+    padding:10px 15px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show{
+    display: flex;
+}
+
+.modal-content{
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    
+}
+
+
+
+#bienvenido h1{
+    font-size: 6rem;
+    margin-bottom: 40px;
+    font-weight: 900;
+    letter-spacing: 5px;
+   font-family: "Bagel Fat One", system-ui;
+   font-weight: 400;
+   font-style: normal;
+   text-align: center;
+    background: linear-gradient(
+        100deg,
+        #59d600,
+        #ffe100,
+        #ff7b00,
+        #ff1b1b
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+}
+
+#bienvenido h2{
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-image: url(descarga.jpg);
+}
+
+#titulorutas{
+    font-size: 3rem;
+    margin-bottom: 40px;
+    font-weight: 900;
+    letter-spacing: 5px;
+   font-family: "Bagel Fat One", system-ui;
+   font-weight: 400;
+   font-style: normal;
+   text-align: center;
+    background: linear-gradient(
+        100deg,
+        #59d600,
+        #ffe100,
+        #ff7b00,
+        #ff1b1b
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+}
+
+.modal-content{
+  width: 550px; 
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+  text-align: center;
+  padding: 20px 100px;
+  margin: 3% auto;
+  background-image: url(descarga.jpg);
+}
+.modal-content h2{
+     font-size: 2.5rem;
+    letter-spacing: 5px;
+   font-family: "Bagel Fat One", system-ui;
+   font-style: normal;
+   text-align: center;
+    background: linear-gradient(
+        100deg,
+        #59d600,
+        #ffe100,
+        #ff7b00,
+        #ff1b1b
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+}
+.modal-content button{
+    margin-top: 30px;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+
+#contenidoTarjeta{
+    display: flex;
+    text-align: center;
+    font-size: 15px;
+    padding: 50px;
+    gap: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card{
+    background:  rgb(236, 202, 176);
+    color: rgb(0, 0, 0);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 10px;
+}
